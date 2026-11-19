@@ -62,6 +62,10 @@ c1.metric("Anuncios", f"{len(filtrado):,}")
 c2.metric("Mediana USD por m²", f"{filtrado['precio_m2'].median():,.0f}" if len(filtrado) else "sin datos")
 
 # >>> RETO 2: si tu reto es el 2, pega aquí las tarjetas nuevas
+d1, d2 = st.columns(2)
+if len(filtrado):
+    d1.metric("Precio máximo por m²", f"{filtrado['precio_m2'].max():,.0f}")
+    d2.metric("Sector con más anuncios", str(filtrado["sector"].value_counts().idxmax()))
 
 pestana1, pestana2, pestana3 = st.tabs(["📍 Sectores", "📈 Tendencia", "⭐ Mi reto"])
 
