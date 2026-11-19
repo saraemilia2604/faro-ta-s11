@@ -88,3 +88,53 @@ with pestana2:
 pestana3.write("Esta pestaña es para tu reto si es el 3, el 4 o el 5.")
 
 # >>> RETO 3, 4 y 5: si tu reto es el 3, el 4 o el 5, pega aquí el bloque de tu reto (solo uno)
+RETO 2 · Tarjetas nuevas
+======================================================================
+ESTE ES EL ARCHIVO DE:
+  - Henry Gabriel Cupacan Benavides
+  - Paula Andrea Paredes Maldonado
+  - Sara Emilia Sanchez Sotomayor
+(Si tu nombre no aparece aquí, abre el archivo con el número que sale junto a tu nombre en LEEME.txt o en la guía. Cada persona usa SOLO su archivo.)
+
+CONCEPTO: Una tarjeta (KPI) es un número resumen calculado sobre lo filtrado
+======================================================================
+
+PASO 1 · COPIA el código de tu reto
+Con el mouse selecciona SOLO las líneas de código que están entre las líneas «COPIA DESDE AQUÍ» y «HASTA AQUÍ» (sin incluir esas dos líneas) y copia con Ctrl+C.
+
+vvvvvvvvvv COPIA DESDE AQUÍ (empieza en la línea de abajo) vvvvvvvvvv
+d1, d2 = st.columns(2)
+if len(filtrado):
+    d1.metric("Precio máximo por m²", f"{filtrado['precio_m2'].max():,.0f}")
+    d2.metric("Sector con más anuncios", str(filtrado["sector"].value_counts().idxmax()))
+^^^^^^^^^^ HASTA AQUÍ (termina en la línea de arriba) ^^^^^^^^^^
+
+PASO 2 · PEGA en app.py, DEBAJO del marcador
+El marcador es una línea de app.py que empieza con «# >>> RETO». Es solo un cartel que dice dónde pegar; Python la ignora.
+Tu marcador: «# >>> RETO 2»  (línea 64)
+Cómo llegar: En el editor de GitHub pulsa Ctrl+F y escribe: RETO 2
+Cómo pegar: haz clic sobre la línea del marcador, pulsa la tecla Fin (End), pulsa Enter y pega con Ctrl+V. No borres el marcador.
+El código pegado debe quedar pegado al borde izquierdo (sin espacios antes del primer renglón). Los renglones que ya traen sangría se pegan tal cual.
+
+ASÍ DEBE QUEDAR (las flechas <== son explicaciones, NO las copies):
+
+  61  c1.metric("Anuncios", f"{len(filtrado):,}")
+  62  c2.metric("Mediana USD por m²", f"{filtrado['precio_m2'].median():,.0f}" if len(filtrado) else "sin datos")
+  63  
+  64  # >>> RETO 2: si tu reto es el 2, pega aquí las tarjetas nuevas      <== el marcador (NO lo borres)
+  65  d1, d2 = st.columns(2)      <== LO QUE PEGAS (líneas 65 a 68)
+  66  if len(filtrado):
+  67      d1.metric("Precio máximo por m²", f"{filtrado['precio_m2'].max():,.0f}")
+  68      d2.metric("Sector con más anuncios", str(filtrado["sector"].value_counts().idxmax()))
+  69  
+  70  pestana1, pestana2, pestana3 = st.tabs(["📍 Sectores", "📈 Tendencia", "⭐ Mi reto"])
+
+(Los números de la izquierda son los números de línea que verás en el editor de GitHub. Las líneas sin flecha ya estaban en app.py.)
+
+PASO 3 · GUARDA en GitHub
+Botón verde «Commit changes…», mensaje: S11: reto 2  y botón «Commit changes».
+
+----------------------------------------------------------------------
+QUÉ ANOTAS (para tu informe): Anota los dos valores con los filtros como están y luego con «departamento» quitado del filtro de tipo.
+
+PREGUNTA DE TU INFORME: ¿Por qué el precio máximo cambia mucho más que la mediana al mover los filtros? ¿Cuál de los dos números te serviría más para decidir y por qué?
