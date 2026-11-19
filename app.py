@@ -5,6 +5,7 @@
 # ENTREGA:   Una página web. Tu reto (el de tu nombre en la guía) añade algo nuevo.
 # ESTO PUEDES CAMBIARLO: tu reto, pegándolo donde dicen los marcadores «>>> RETO».
 # ============================================================================
+
 import math
 from pathlib import Path
 
